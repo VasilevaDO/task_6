@@ -1,0 +1,12 @@
+Компилить как всегда:
+
+gcc -c librdwr.c
+ar rcs librdwr.a librdwr.o
+gcc server.c -lpthread -L. -lrdwr -o ser.out
+gcc client.c -L. -lrdwr -o cli.out
+gcc manager.c -o manager
+gcc rand.c -o rand
+
+Сначала запускаем ./rand X, где в качестве аргумента X указываем число (размер квадратной матрицы, желательно не больше 500, иначе есть возможность повесить прогу надолго)
+
+Далее запускаем ./manager Y, где в качестве аргумента Y указываем число клиентов.
